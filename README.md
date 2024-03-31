@@ -1,2 +1,3 @@
-# MyPortfolio-Grading-1
-A project for a course in University
+# My Portfolio
+
+Check my page [HERE](https://stellagadevska.github.io/MyPortfolio/)
