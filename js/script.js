@@ -5,16 +5,16 @@ window.addEventListener("load", function() {
     }, 1000)
 })
 
-// Gallery Items Filter
+// Projects Items Filter
 
-const filterContainer = document.querySelector(".gallery-filter"),
+const filterContainer = document.querySelector(".projects-filter"),
     filterBtns = filterContainer.children,
     totalFilterBtn = filterBtns.length,
-    galleryItems = document.querySelectorAll(".gallery-item"),
-    totalGalleryItem = galleryItems.length;
+    projectsItems = document.querySelectorAll(".projects-item"),
+    totalProjectsItem = projectsItems.length;
 
 //added
-console.log(totalGalleryItem);
+console.log(totalProjectsItem);
 
 for (let i = 0; i < totalFilterBtn; i++) {
     filterBtns[i].addEventListener("click", function() {
@@ -22,25 +22,25 @@ for (let i = 0; i < totalFilterBtn; i++) {
         this.classList.add("active");
 
         const filterValue = this.getAttribute("data-filter");
-        for (let k = 0; k < totalGalleryItem; k++) {
-            if (filterValue === galleryItems[k].getAttribute("data-category")) {
-                galleryItems[k].classList.remove("hide");
-                galleryItems[k].classList.add("show");
+        for (let k = 0; k < totalProjectsItem; k++) {
+            if (filterValue === projectsItems[k].getAttribute("data-category")) {
+                projectsItems[k].classList.remove("hide");
+                projectsItems[k].classList.add("show");
             } else {
                 // add -> show
-                galleryItems[k].classList.add("hide");
-                galleryItems[k].classList.remove("show");
+                projectsItems[k].classList.add("hide");
+                projectsItems[k].classList.remove("show");
             }
 
             if (filterValue === "all") {
-                galleryItems[k].classList.remove("hide");
-                galleryItems[k].classList.add("show");
+                projectsItems[k].classList.remove("hide");
+                projectsItems[k].classList.add("show");
             }
         }
     })
 }
 
-// Gallery Lightbox
+// Projects Lightbox
 
 const lightbox = document.querySelector(".lightbox"),
     lightboxImg = lightbox.querySelector(".lightbox-img"),
@@ -49,9 +49,9 @@ const lightbox = document.querySelector(".lightbox"),
     lightboxCounter = lightbox.querySelector(".caption-counter");
 let itemIndex = 0;
 
-for (let i = 0; i < totalGalleryItem; i++) {
+for (let i = 0; i < totalProjectsItem; i++) {
 
-    galleryItems[i].addEventListener("click", function() {
+    projectsItems[i].addEventListener("click", function() {
         itemIndex = i;
         changeItem();
         toggleLightbox();
@@ -60,7 +60,7 @@ for (let i = 0; i < totalGalleryItem; i++) {
 }
 
 function nextItem() {
-    if (itemIndex === totalGalleryItem - 1) {
+    if (itemIndex === totalProjectsItem - 1) {
         itemIndex = 0;
     } else {
         itemIndex++;
@@ -70,7 +70,7 @@ function nextItem() {
 
 function prevItem() {
     if (itemIndex === 0) {
-        itemIndex = totalGalleryItem - 1;
+        itemIndex = totalProjectsItem - 1;
     } else {
         itemIndex--;
     }
@@ -82,10 +82,10 @@ function toggleLightbox() {
 }
 
 function changeItem() {
-    imgSrc = galleryItems[itemIndex].querySelector(".gallery-img img").getAttribute("src");
+    imgSrc = projectsItems[itemIndex].querySelector(".projects-img img").getAttribute("src");
     lightboxImg.src = imgSrc;
-    lightboxText.innerHTML = galleryItems[itemIndex].querySelector("h4").innerHTML;
-    lightboxCounter.innerHTML = ((itemIndex + 1) + " of " + totalGalleryItem);
+    lightboxText.innerHTML = projectsItems[itemIndex].querySelector("h4").innerHTML;
+    lightboxCounter.innerHTML = ((itemIndex + 1) + " of " + totalProjectsItem);
 }
 
 lightbox.addEventListener("click", function(event) {
