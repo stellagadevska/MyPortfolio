@@ -1,11 +1,11 @@
 .aside .logo a::before {
-    border-top: 4px solid #ec1839;
-    border-left: 4px solid #ec1839;
+    border-top: 4px solid #b65293;
+    border-left: 4px solid #b65293;
 }
 
 .aside .logo a::after {
-    border-right: 4px solid #ec1839;
-    border-bottom: 4px solid #ec1839;
+    border-right: 4px solid #b65293;
+    border-bottom: 4px solid #b65293;
 }
 
 .lightbox .lightbox-controls .prev-item .fa,
@@ -16,7 +16,7 @@
 .about .about-content .about-text h3 span,
 .aside .nav li a:hover,
 .aside .nav li a.active {
-    color: #ec1839;
+    color: #b65293;
 }
 
 .interests .interests-item .interests-item-inner:hover .icon,
@@ -30,9 +30,9 @@
 .aside .nav-toggler span::before,
 .aside .nav-toggler span::after,
 .home .intro .social-links a {
-    background-color: #ec1839;
+    background-color: #b65293;
 }
 
 .gallery .gallery-filter button.active {
-    border-color: #ec1839;
+    border-color: #b65293;
 }

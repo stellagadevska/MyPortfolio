@@ -804,7 +804,7 @@ body {
 }
 
 #hdrecommendations h3 {
-  color: #ec1839;
+  color: #b65293;
 }
 
 #hdrecommendations *,
@@ -844,8 +844,8 @@ body {
   font-size: 80%;
   resize: vertical;
   margin-bottom: 20px;
-  border: 1px solid #ec1839;
-  border-bottom: 4px solid #ec1839;
+  border: 1px solid #b65293;
+  border-bottom: 4px solid #b65293;
 }
 
 .commentSection {
