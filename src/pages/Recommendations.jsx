@@ -1,4 +1,5 @@
 import React from "react";
+import RecommendWidget from "../components/RecommendWidget";
 
 const Recommendations = () => {
   return (
@@ -8,15 +9,7 @@ const Recommendations = () => {
           <div class='section-title padd-15'>
             <h2>Recommendations</h2>
             <div id='wrapper padd-15'>
-              <script
-                src='https://static.elfsight.com/platform/platform.js'
-                data-use-service-core
-                defer
-              ></script>
-              <div
-                class='elfsight-app-79fc1fbe-1401-496a-a284-7095b78b8956'
-                data-elfsight-app-lazy
-              ></div>
+              <RecommendWidget />
             </div>
           </div>
         </div>
