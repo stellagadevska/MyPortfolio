@@ -13,24 +13,24 @@ const Projects = () => {
   const projectsHeaderTitle = "Projects";
   const projects = [
     {
-      dataCategory: "graphic-design",
+      dataCategory: "spas",
       imageSrc: project1,
-      heading: "Graphic Design",
+      heading: "Single Page Application",
     },
     {
-      dataCategory: "photography",
+      dataCategory: "e-commerce",
       imageSrc: project2,
-      heading: "Photography",
+      heading: "E-commerce",
     },
     {
-      dataCategory: "drawing",
+      dataCategory: "e-commerce",
       imageSrc: project3,
-      heading: "Drawing",
+      heading: "E-commerce",
     },
     {
-      dataCategory: "photography",
+      dataCategory: "graphic-design",
       imageSrc: project4,
-      heading: "Photography",
+      heading: "Graphic Design",
     },
     {
       dataCategory: "graphic-design",
@@ -38,9 +38,9 @@ const Projects = () => {
       heading: "Graphic Design",
     },
     {
-      dataCategory: "drawing",
+      dataCategory: "graphic-design",
       imageSrc: project6,
-      heading: "Drawing",
+      heading: "Graphic Design",
     },
   ];
   const filterButtons = [
@@ -49,16 +49,16 @@ const Projects = () => {
       buttonLabel: "All",
     },
     {
+      buttonClassName: "spas",
+      buttonLabel: "SPAs",
+    },
+    {
+      buttonClassName: "e-commerce",
+      buttonLabel: "E-commerce",
+    },
+    {
       buttonClassName: "graphic-design",
       buttonLabel: "Graphic Design",
-    },
-    {
-      buttonClassName: "drawing",
-      buttonLabel: "Drawing",
-    },
-    {
-      buttonClassName: "photography",
-      buttonLabel: "Photography",
     },
   ];
 
