@@ -3,6 +3,8 @@ import InfoItem from "./InfoItem";
 import myRes from '../../assets/files/myRes.pdf'
 
 const PersonalInfo = () => {
+  const downloadLabel = 'Download CV'
+  const hireMeLabel = 'Hire Me'
   const infoItems = [
     {
       itemLabel: "Birthday:",
@@ -45,7 +47,7 @@ const PersonalInfo = () => {
       <div className='row'>
         <div className='buttons padd-15'>
           <a href={myRes} className='btn' download>
-            Download CV
+            {downloadLabel}
           </a>
 
           <a
@@ -53,7 +55,7 @@ const PersonalInfo = () => {
             data-section-index='1'
             className='btn hire-me'
           >
-            Hire Me
+            {hireMeLabel}
           </a>
         </div>
       </div>

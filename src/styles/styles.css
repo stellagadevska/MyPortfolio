@@ -645,6 +645,10 @@ body {
   margin: 0;
 }
 
+.certificates-margin {
+  margin-top: 50px;
+}
+
 /* Projects Section */
 
 .projects .container {
