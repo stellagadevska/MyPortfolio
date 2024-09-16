@@ -1,9 +1,12 @@
-import React, { useState } from "react";
-
+import React, { useState, useEffect } from "react";
 import logo from "../../assets/images/logo.png";
 
 const Navbar = () => {
-  const [activeLink, setActiveLink] = useState("home");
+  const [activeLink, setActiveLink] = useState(() => {
+    const savedLink = localStorage.getItem("activeLink");
+    return savedLink ? savedLink : "home";
+  });
+
   const navLinks = [
     {
       path: "home",
@@ -31,12 +34,17 @@ const Navbar = () => {
       label: "Recommendations",
     },
   ];
+
+  useEffect(() => {
+    localStorage.setItem("activeLink", activeLink);
+  }, [activeLink]);
+
   return (
     <div>
       <div className='aside'>
         <div className='logo'>
-          <img src={logo} style={{ width: "35px", height: "auto" }} />
-          <a href=''>Portfolio</a>
+          <img src={logo} style={{ width: "35px", height: "auto" }} alt='logo'/>
+          <a href='home'>Portfolio</a>
         </div>
         <div className='nav-toggler'>
           <span></span>
@@ -48,7 +56,9 @@ const Navbar = () => {
                 <a
                   href={`${navLink.path}`}
                   className={activeLink === navLink.path ? "active" : ""}
-                  onClick={() => setActiveLink(navLink.path)}
+                  onClick={() => {
+                    setActiveLink(navLink.path);
+                  }}
                 >
                   <i className={navLink.iconClass}></i> {navLink.label}
                 </a>

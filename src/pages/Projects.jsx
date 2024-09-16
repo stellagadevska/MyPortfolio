@@ -1,75 +1,118 @@
-import React, { useState, useEffect } from "react";
-import logo from "../../assets/images/logo.png";
+import React, { useState } from "react";
+import project1 from "../assets/images/projects/1.jpg";
+import project2 from "../assets/images/projects/2.jpg";
+import project3 from "../assets/images/projects/3.jpg";
+import project4 from "../assets/images/projects/4.jpg";
+import project5 from "../assets/images/projects/5.jpg";
+import project6 from "../assets/images/projects/6.jpg";
+import ProjectsItem from "../components/ProjectsItem";
 
-const Navbar = () => {
-  const [activeLink, setActiveLink] = useState(() => {
-    const savedLink = localStorage.getItem("activeLink");
-    return savedLink ? savedLink : "home";
-  });
+const Projects = () => {
+  const [filter, setFilter] = useState("all");
 
-  const navLinks = [
+  const projectsHeaderTitle = "Projects";
+  const projects = [
     {
-      path: "home",
-      iconClass: "fa fa-home",
-      label: "Home",
+      dataCategory: "spas",
+      imageSrc: project1,
+      heading: "Single Page Application",
     },
     {
-      path: "about",
-      iconClass: "fa fa-user",
-      label: "About",
+      dataCategory: "e-commerce",
+      imageSrc: project2,
+      heading: "E-commerce",
     },
     {
-      path: "interests",
-      iconClass: "fa fa-list",
-      label: "Interests",
+      dataCategory: "e-commerce",
+      imageSrc: project3,
+      heading: "E-commerce",
     },
     {
-      path: "projects",
-      iconClass: "fa fa-briefcase",
-      label: "Projects",
+      dataCategory: "graphic-design",
+      imageSrc: project4,
+      heading: "Graphic Design",
     },
     {
-      path: "recommendations",
-      iconClass: "fa fa-comments",
-      label: "Recommendations",
+      dataCategory: "graphic-design",
+      imageSrc: project5,
+      heading: "Graphic Design",
+    },
+    {
+      dataCategory: "graphic-design",
+      imageSrc: project6,
+      heading: "Graphic Design",
+    },
+  ];
+  const filterButtons = [
+    {
+      buttonClassName: "all",
+      buttonLabel: "All",
+    },
+    {
+      buttonClassName: "spas",
+      buttonLabel: "SPAs",
+    },
+    {
+      buttonClassName: "e-commerce",
+      buttonLabel: "E-commerce",
+    },
+    {
+      buttonClassName: "graphic-design",
+      buttonLabel: "Graphic Design",
     },
   ];
 
-  useEffect(() => {
-    localStorage.setItem("activeLink", activeLink);
-  }, [activeLink]);
+  const handleFilterChange = (category) => {
+    setFilter(category);
+  };
+
+  const filteredProjects = projects.filter((project) =>
+    filter === "all" ? true : project.dataCategory === filter
+  );
 
   return (
-    <div>
-      <div className='aside'>
-        <div className='logo'>
-          <img src={logo} style={{ width: "35px", height: "auto" }} alt='logo'/>
-          <a href='home'>Portfolio</a>
+    <section class='projects section' id='projects'>
+      <div class='container'>
+        <div class='row'>
+          <div class='section-title padd-15'>
+            <h2>{projectsHeaderTitle}</h2>
+          </div>
         </div>
-        <div className='nav-toggler'>
-          <span></span>
-        </div>
-        <ul className='nav'>
-          {navLinks.map((navLink) => {
-            return (
-              <li>
-                <a
-                  href={`${navLink.path}`}
-                  className={activeLink === navLink.path ? "active" : ""}
-                  onClick={() => {
-                    setActiveLink(navLink.path);
-                  }}
+
+        <div class='row'>
+          <div class='projects-filter padd-15'>
+            {filterButtons.map((filterButton) => {
+              return (
+                <button
+                  type='button'
+                  className={
+                    filter === filterButton.buttonClassName ? "active" : ""
+                  }
+                  onClick={() =>
+                    handleFilterChange(filterButton.buttonClassName)
+                  }
                 >
-                  <i className={navLink.iconClass}></i> {navLink.label}
-                </a>
-              </li>
+                  {filterButton.buttonLabel}
+                </button>
+              );
+            })}
+          </div>
+        </div>
+
+        <div class='row'>
+          {filteredProjects.map((project) => {
+            return (
+              <ProjectsItem
+                dataCategory={project.dataCategory}
+                imageSrc={project.imageSrc}
+                heading={project.heading}
+              />
             );
           })}
-        </ul>
-        <div className='copyright-text'>&copy; 2024 Stela Gadevska</div>
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 
-export default Navbar;
+export default Projects;
