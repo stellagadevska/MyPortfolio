@@ -5,7 +5,7 @@ import PersonalInfo from "../components/PersonalInfo/PersonalInfo";
 
 const About = () => {
   return (
-    <section className='about section' id='about'>
+    <section className='about active section' id='about'>
       <div className='container'>
         <div className='row'>
           <div className='section-title padd-15'>

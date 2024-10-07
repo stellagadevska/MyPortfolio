@@ -396,7 +396,7 @@ body {
   width: 200px;
   border-radius: 50%;
   display: inline-block;
-  border: 8px solid #ffffff;
+  border: 8px solid #b65293;
 }
 
 .home .intro h1 {
@@ -609,6 +609,12 @@ body {
   top: 0;
 }
 
+.about .about-content .timeline .timeline-place {
+  color: #b65293;
+  margin-top: -15px;
+  padding-bottom: 15px;
+}
+
 .about .about-content .timeline .circle-dot {
   position: absolute;
   left: 0;
@@ -677,6 +683,11 @@ body {
   padding-bottom: 2px;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
+}
+
+.projects .projects-filter button.active {
+  color: #b65293;
+  font-weight: 800;
 }
 
 .projects .projects-item {

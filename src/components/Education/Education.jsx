@@ -1,30 +1,37 @@
-import React, { useEffect } from "react";
+import React from "react";
 import TimelineItem from "./TimelineItem";
 
 const Education = () => {
   const educationItems = [
     {
+      date: "2024-ongoing",
+      title: "Artificial Intelligence",
+      place: "Sofia University",
+      iconClass: "fa fa-calendar",
+    },
+    {
       date: "2023-2024",
       title: "Professional Qualification for Pedagogy in IT/ Informatics",
-      text: "New Bulgarian University",
+      place: "New Bulgarian University",
       iconClass: "fa fa-calendar",
     },
     {
       date: "2018 - 2023",
       title: "Business Informatics",
-      text: "New Bulgarian University",
+      place: "New Bulgarian University",
       iconClass: "fa fa-calendar",
     },
     {
       date: "2020-2022",
       title: "Java Web Development",
-      text: "Softuni",
+      place: "Softuni",
       iconClass: "fa fa-calendar",
     },
     {
       date: "2013 - 2018",
       title: "Language Class",
-      text: 'Over the 5 years in High School "Vasil Levski", I studied English and Spanish.',
+      place: 'Vasil Levski Secondary School',
+      text: 'Bulgarian - Native/ English - C1/ Spanish - A2',
       iconClass: "fa fa-calendar",
     },
   ];
@@ -33,13 +40,13 @@ const Education = () => {
     {
       date: "December 2021",
       title: "AWS Certified Cloud Practitioner",
-      text: "Amazon Web Services (AWS)",
+      place: "Amazon Web Services (AWS)",
       iconClass: "fa fa-calendar",
     },
     {
       date: "December 2017",
       title: "Certificate in Advanced English",
-      text: "Cambridge Assessment English",
+      place: "Cambridge Assessment English",
       iconClass: "fa fa-calendar",
     },
   ];
@@ -48,13 +55,13 @@ const Education = () => {
     {
       date: "June 2021 - present",
       title: "Front End Software Developer",
-      text: "Amdocs",
+      place: "Amdocs",
       iconClass: "fa fa-calendar",
     },
     {
       date: "March 2021 - June 2021",
       title: "Software Developer Intern",
-      text: "Amdocs",
+      place: "Amdocs",
       iconClass: "fa fa-calendar",
     },
   ];
@@ -71,6 +78,7 @@ const Education = () => {
                   <TimelineItem
                     date={educationItem.date}
                     title={educationItem.title}
+                    place={educationItem.place}
                     text={educationItem.text}
                     iconClass={educationItem.iconClass}
                   />
@@ -90,6 +98,7 @@ const Education = () => {
                 <TimelineItem
                   date={workItem.date}
                   title={workItem.title}
+                  place={workItem.place}
                   text={workItem.text}
                   iconClass={workItem.iconClass}
                 />
@@ -106,6 +115,7 @@ const Education = () => {
                 <TimelineItem
                   date={certificate.date}
                   title={certificate.title}
+                  place={certificate.place}
                   text={certificate.text}
                   iconClass={certificate.iconClass}
                 />

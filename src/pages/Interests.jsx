@@ -46,7 +46,7 @@ const Interests = () => {
   ];
 
   return (
-    <section className='interests section' id='interests'>
+    <section className='interests active section' id='interests'>
       <div className='container'>
         <div className='row'>
           <div className='section-title padd-15'>

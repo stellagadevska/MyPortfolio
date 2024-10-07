@@ -7,6 +7,7 @@ const TimelineItem = (props) => {
       <h6 className='timeline-date'></h6>
       <i className={props.iconClass}></i> {props.date}
       <h4 className='timeline-title'>{props.title}</h4>
+      <h4 className='timeline-place'>{props.place}</h4>
       <p className='timeline-text'>{props.text}</p>
     </div>
   );

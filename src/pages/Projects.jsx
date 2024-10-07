@@ -71,7 +71,7 @@ const Projects = () => {
   );
 
   return (
-    <section class='projects section' id='projects'>
+    <section class='projects active section' id='projects'>
       <div class='container'>
         <div class='row'>
           <div class='section-title padd-15'>
