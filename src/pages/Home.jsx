@@ -2,10 +2,10 @@ import React from "react";
 import profilePicture from "../assets/images/profilePicture.jpg";
 
 const Home = () => {
-  let myName = "Stela Gadevska";
-  let profession = "FrontEnd Developer";
-  let githubURL = "https://github.com/stellagadevska";
-  let linkedInURL = "https://www.linkedin.com/in/stela-gadevska/";
+  const myName = "Stela Gadevska";
+  const profession = "FrontEnd Developer";
+  const githubURL = "https://github.com/stellagadevska";
+  const linkedInURL = "https://www.linkedin.com/in/stela-gadevska/";
 
   return (
     <section className='home section active' id='home'>
