@@ -1,0 +1,178 @@
+/* Sidebar styles, extracted from the global stylesheet into a CSS Module.
+   Class names here are locally scoped — Next.js hashes them at build time, so
+   `.aside` in this file becomes something like `Sidebar_aside__a1b2c`. That means
+   the JSX must reference them via the imported `styles` object (styles.aside),
+   not as plain strings. Global classes we don't own (Font Awesome's `.fa`) are
+   opted out of scoping with `:global(...)`. */
+
+.aside {
+  width: 270px;
+  background-color: #fdf9ff;
+  position: fixed;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  border-right: 1px solid #e8dfec;
+  padding: 30px;
+  transition: all 0.3s ease;
+}
+
+.logo {
+  padding: 30px 0;
+}
+
+.logo a {
+  font-size: 32px;
+  color: #302e4d;
+  font-family: var(--font-rubik), sans-serif;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+  padding: 0 10px;
+  line-height: 50px;
+}
+
+.navToggler {
+  height: 40px;
+  width: 45px;
+  border: 1px solid #d4d4e3;
+  cursor: pointer;
+  position: fixed;
+  left: 300px;
+  top: 20px;
+  z-index: 11;
+  border-radius: 5px;
+  background-color: #fdf9ff;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.navToggler span {
+  height: 2px;
+  width: 18px;
+  display: inline-block;
+  position: relative;
+}
+
+.navToggler span::before {
+  content: "";
+  height: 2px;
+  width: 18px;
+  position: absolute;
+  top: -6px;
+  left: 0;
+}
+
+.navToggler span::after {
+  content: "";
+  height: 2px;
+  width: 18px;
+  position: absolute;
+  top: 6px;
+  left: 0;
+}
+
+.nav {
+  list-style: none;
+  margin: 80px 0;
+  padding: 0;
+}
+
+.nav li {
+  display: block;
+}
+
+.nav li a {
+  font-size: 16px;
+  font-weight: 600;
+  color: #302e4d;
+  text-decoration: none;
+  line-height: 45px;
+  display: block;
+  border-bottom: 1px solid #e8dfec;
+  transition: all 0.3s ease;
+  text-transform: capitalize;
+}
+
+.nav li a:not(.active):hover {
+  padding-left: 5px;
+}
+
+/* Accent color for hovered/active links (was in styles/skins/pink.css) */
+.nav li a:hover,
+.nav li a.active {
+  color: var(--accent);
+}
+
+.nav li a :global(.fa) {
+  margin-right: 5px;
+}
+
+/* The toggler bars use the accent color (was in the pink skin) */
+.navToggler span,
+.navToggler span::before,
+.navToggler span::after {
+  background-color: var(--accent);
+}
+
+/* When open, morph the hamburger into an X: hide the middle bar and rotate the
+   two pseudo-element bars into a cross. */
+.navToggler.open span {
+  background-color: transparent;
+}
+
+.navToggler.open span::before {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+.navToggler.open span::after {
+  transform: rotate(-45deg);
+  top: 0;
+}
+
+.copyrightText {
+  font-size: 13px;
+  color: #7d7d7d;
+}
+
+/* Dimmed backdrop shown behind the open menu on mobile; tapping it closes.
+   Sits above the page content (z-index 2) but below the sidebar (z-index 10). */
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgb(0 0 0 / 0.4);
+  z-index: 9;
+  border: none;
+  cursor: pointer;
+}
+
+/* Mobile: the sidebar sits off-canvas and the toggler reveals it. The toggler
+   button toggles the `open` class from Sidebar.tsx (useState). On desktop the
+   toggler is hidden and the sidebar is always visible. */
+@media (max-width: 1199px) {
+  .aside {
+    left: -270px;
+  }
+  .aside.open {
+    left: 0;
+  }
+  .navToggler {
+    display: flex;
+    left: 30px;
+  }
+  .navToggler.open {
+    left: 300px;
+  }
+}
+
+/* The backdrop is only meaningful on mobile, where the menu can be opened. */
+@media (min-width: 1200px) {
+  .backdrop {
+    display: none;
+  }
+}

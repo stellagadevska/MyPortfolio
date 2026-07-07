@@ -1,0 +1,32 @@
+.aboutContent {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+.aboutText {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+.aboutText h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  font-weight: 700;
+  color: #302e4d;
+}
+
+/* The highlighted role in the heading uses the accent color (was in the pink skin) */
+.aboutText h3 span {
+  color: var(--accent);
+}
+
+.aboutText p {
+  font-size: 16px;
+  line-height: 25px;
+  color: #504e70;
+  margin: 0 0 16px;
+}
+
+.aboutText p:last-child {
+  margin-bottom: 0;
+}

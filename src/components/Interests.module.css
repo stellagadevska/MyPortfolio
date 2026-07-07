@@ -1,0 +1,78 @@
+/* Shared by the interests page (grid) and InterestCard.tsx (each card). */
+
+.interestsItem {
+  flex: 0 0 33.33%;
+  max-width: 33.33%;
+  margin-bottom: 30px;
+  display: flex;
+}
+
+.interestsItemInner {
+  background-color: #fdf9ff;
+  border: 1px solid #d4d4e3;
+  border-radius: 10px;
+  padding: 30px 15px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.interestsItemInner:hover {
+  box-shadow: 0 0 20px rgb(48 46 77 / 0.15);
+}
+
+.icon {
+  height: 60px;
+  width: 60px;
+  display: block;
+  margin: 0 auto 30px;
+  text-align: center;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+/* Icon is accent-colored by default; on hover the circle fills with the accent
+   and the glyph turns white (was spread across the pink skin + Interests.css). */
+.icon :global(.fa) {
+  font-size: 40px;
+  line-height: 60px;
+  transition: all 0.3s ease;
+  color: var(--accent);
+}
+
+.interestsItemInner:hover .icon {
+  background-color: var(--accent);
+}
+
+.interestsItemInner:hover .icon :global(.fa) {
+  font-size: 25px;
+  color: #ffffff;
+}
+
+.interestsItemInner h4 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #302e4d;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.interestsItemInner p {
+  font-size: 16px;
+  color: #504e70;
+  line-height: 25px;
+  margin: 0;
+}
+
+@media (max-width: 991px) {
+  .interestsItem {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+
+@media (max-width: 767px) {
+  .interestsItem {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}

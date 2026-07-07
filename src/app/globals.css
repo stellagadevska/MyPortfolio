@@ -1,0 +1,181 @@
+/* ===== Global layer =====
+   Only truly app-wide styles live here: the reset, the theme token, layout
+   primitives reused on every page (.section, .container, .row, .padd-15, .btn,
+   .section-title, .shadow-dark) and the global responsive rules for .section.
+   Everything component-specific lives in that component's *.module.css. */
+
+/* Font Awesome and the Google fonts (Montserrat/Rubik) are both self-hosted and
+   imported in app/layout.tsx — no external requests. The fonts are exposed as
+   the CSS variables --font-montserrat / --font-rubik. */
+
+:root {
+  /* Single accent color used across the whole site. This replaces the old
+     hand-written styles/skins/pink.css — change this one value to re-skin. */
+  --accent: #b65293;
+}
+
+body {
+  margin: 0;
+  line-height: 1.5;
+  font-size: 16px;
+  font-family: var(--font-montserrat), sans-serif;
+  font-weight: 400;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+.section {
+  background-color: #f2f2fc;
+  min-height: 100vh;
+  display: block;
+  padding: 0 30px;
+  position: fixed;
+  left: 270px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+.section.back-section {
+  z-index: 1;
+}
+
+.section.active {
+  opacity: 1;
+  z-index: 2;
+  animation: slideSection 0.35s ease;
+}
+
+/* A quick slide-and-fade on route change. Kept short (0.35s over ~40px) so
+   client-side navigation feels instant rather than like a full page reload. */
+@keyframes slideSection {
+  0% {
+    transform: translateX(40px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .section.active {
+    animation: none;
+  }
+}
+
+.section .container {
+  padding-top: 60px;
+  padding-bottom: 70px;
+}
+
+.section-title {
+  flex: 0 0 100%;
+  max-width: 100%;
+  margin-bottom: 60px;
+}
+
+.section-title h2 {
+  font-size: 40px;
+  color: #302e4d;
+  font-family: var(--font-rubik), sans-serif;
+  font-weight: 700;
+  margin: 0;
+  position: relative;
+}
+
+.section-title h2::before {
+  content: "";
+  height: 4px;
+  width: 50px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--accent);
+}
+
+.section-title h2::after {
+  content: "";
+  height: 4px;
+  width: 25px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: -8px;
+  background-color: var(--accent);
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+  position: relative;
+}
+
+.padd-15 {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.container {
+  max-width: 1100px;
+  width: 100%;
+  margin: auto;
+}
+
+.shadow-dark {
+  box-shadow: 0 0 20px rgb(48 46 77 / 0.15);
+}
+
+.btn {
+  font-size: 16px;
+  font-family: var(--font-rubik), sans-serif;
+  font-weight: 500;
+  padding: 12px 35px;
+  color: #ffffff;
+  border-radius: 40px;
+  transition: all 0.3s ease;
+  display: inline-block;
+  white-space: nowrap;
+  border: none;
+  cursor: pointer;
+  background-color: var(--accent);
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Global responsive rules for the fixed section layout. Component-specific
+   responsive tweaks live in each component's module. */
+@media (max-width: 1199px) {
+  .section {
+    left: 0;
+  }
+  .section .container {
+    padding-top: 70px;
+  }
+}

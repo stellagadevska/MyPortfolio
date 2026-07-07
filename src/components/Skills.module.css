@@ -1,0 +1,53 @@
+.skills {
+  flex: 0 0 40%;
+  max-width: 40%;
+  margin-top: 40px;
+}
+
+.skillItem {
+  flex: 0 0 100%;
+  max-width: 100%;
+  margin-bottom: 30px;
+}
+
+.skillItem h5 {
+  line-height: 40px;
+  font-weight: 600;
+  font-size: 16px;
+  color: #302e4d;
+  text-transform: capitalize;
+  margin: 0;
+}
+
+.progress {
+  background-color: #e3e3e3;
+  height: 8px;
+  border-radius: 4px;
+  width: 100%;
+  position: relative;
+}
+
+.progressIn {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  border-radius: 4px;
+  background-color: var(--accent);
+}
+
+.skillPercent {
+  line-height: 40px;
+  position: absolute;
+  right: 0;
+  color: #302e4d;
+  top: -40px;
+  font-weight: 400;
+}
+
+@media (max-width: 767px) {
+  .skills {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
