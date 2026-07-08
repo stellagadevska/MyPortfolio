@@ -20,11 +20,21 @@ export default function HomePage() {
           <h1>{profile.name}</h1>
           <p>{profile.profession}</p>
           <div className={styles.socialLinks}>
-            <a href={profile.githubUrl} target='_blank' rel='noreferrer'>
-              <i className='fa fa-github'></i>
+            <a
+              href={profile.githubUrl}
+              target='_blank'
+              rel='noreferrer'
+              aria-label={`${profile.name} on GitHub (opens in a new tab)`}
+            >
+              <i className='fa fa-github' aria-hidden='true'></i>
             </a>
-            <a href={profile.linkedInUrl} target='_blank' rel='noreferrer'>
-              <i className='fa fa-linkedin'></i>
+            <a
+              href={profile.linkedInUrl}
+              target='_blank'
+              rel='noreferrer'
+              aria-label={`${profile.name} on LinkedIn (opens in a new tab)`}
+            >
+              <i className='fa fa-linkedin' aria-hidden='true'></i>
             </a>
           </div>
         </div>

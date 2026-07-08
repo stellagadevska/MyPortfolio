@@ -21,7 +21,13 @@ const PersonalInfo = () => {
             Download CV
           </a>
 
-          <a href={profile.linkedInUrl} className='btn'>
+          <a
+            href={profile.linkedInUrl}
+            className='btn'
+            target='_blank'
+            rel='noreferrer'
+            aria-label='Hire me — contact on LinkedIn (opens in a new tab)'
+          >
             Hire Me
           </a>
         </div>

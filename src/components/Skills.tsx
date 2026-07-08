@@ -8,7 +8,14 @@ const Skills = () => {
         {skills.map((skill) => (
           <div className={`${styles.skillItem} padd-15`} key={skill.name}>
             <h5>{skill.name}</h5>
-            <div className={styles.progress}>
+            <div
+              className={styles.progress}
+              role='progressbar'
+              aria-label={`${skill.name} proficiency`}
+              aria-valuenow={skill.level}
+              aria-valuemin={0}
+              aria-valuemax={100}
+            >
               <div
                 className={styles.progressIn}
                 style={{ width: `${skill.level}%` }}

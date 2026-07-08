@@ -6,7 +6,7 @@ const InterestCard = ({ name, description, iconClass }: Interest) => {
     <div className={`${styles.interestsItem} padd-15`}>
       <div className={styles.interestsItemInner}>
         <div className={styles.icon}>
-          <i className={iconClass}></i>
+          <i className={iconClass} aria-hidden='true'></i>
         </div>
         <h4>{name}</h4>
         <p>{description}</p>

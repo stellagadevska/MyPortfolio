@@ -45,7 +45,8 @@ const Sidebar = () => {
               >
                 {/* Font Awesome classes stay as plain global strings, not module
                     classes — the module targets them via :global(.fa) */}
-                <i className={link.iconClass}></i> {link.label}
+                <i className={link.iconClass} aria-hidden='true'></i>{" "}
+                {link.label}
               </Link>
             </li>
           ))}

@@ -20,7 +20,7 @@ const ProjectCard = ({ category, image, heading }: Project) => {
         <div className={styles.projectsInfo}>
           <h4>{heading}</h4>
           <div className={styles.icon}>
-            <i className='fa fa-search'></i>
+            <i className='fa fa-search' aria-hidden='true'></i>
           </div>
         </div>
       </div>
