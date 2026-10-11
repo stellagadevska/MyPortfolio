@@ -52,7 +52,7 @@ const Sidebar = () => {
           ))}
         </ul>
         <div className={styles.copyrightText}>
-          &copy; {currentYear} Stela Gadevska
+          &copy; {currentYear} Stella Gadevska
         </div>
       </div>
 

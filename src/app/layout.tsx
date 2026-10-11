@@ -21,8 +21,8 @@ const rubik = Rubik({
 });
 
 export const metadata: Metadata = {
-  title: "My Portfolio - Stela Gadevska",
-  description: "Portfolio of Stela Gadevska, Front-End Developer.",
+  title: "My Portfolio - Stella Gadevska",
+  description: "Portfolio of Stella Gadevska, Front-End Developer.",
 };
 
 export default function RootLayout({

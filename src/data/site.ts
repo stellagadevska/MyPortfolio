@@ -17,8 +17,8 @@ export const navLinks: NavLink[] = [
 ];
 
 export const profile = {
-  name: "Stela Gadevska",
+  name: "Stella Gadevska",
   profession: "FrontEnd Developer",
   githubUrl: "https://github.com/stellagadevska",
-  linkedInUrl: "https://www.linkedin.com/in/stela-gadevska/",
+  linkedInUrl: "https://www.linkedin.com/in/Stella-gadevska/",
 } as const;

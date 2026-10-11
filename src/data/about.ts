@@ -42,7 +42,7 @@ function calculateAge(birthDate: Date): number {
 
 export const personalInfo: InfoItem[] = [
   { label: "Age:", value: String(calculateAge(BIRTH_DATE)) },
-  { label: "Email:", value: "stelagadevska@gmail.com" },
+  { label: "Email:", value: "Stellagadevska@gmail.com" },
   { label: "City:", value: "Sofia" },
   { label: "Bachelor in:", value: "Business Informatics" },
   { label: "Masters in:", value: "Artificial Intelligence" },
